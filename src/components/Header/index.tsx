@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Logo, Menu, Option, Options } from "./styles";
 
-import HomeChosen from "../../assets/Home-chosen.svg";
-import Emblem from "../../assets/Logo.svg";
-import Profile from "../../assets/Profile.svg";
+import HomeChosen from "../../assets/images/Home-chosen.svg";
+import Emblem from "../../assets/images/Logo.svg";
+import Profile from "../../assets/images/Profile.svg";
 
 const Header: React.FC = () => {
   return (

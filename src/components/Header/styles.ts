@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+import "../../assets/styles/global.css";
+
 export const Container = styled.div`
-  width: 9.5rem;
+  width: 6rem;
   height: 46.5rem;
-  background-color: var(--grey-light);
+  margin-left: 7rem;
+  background-color: var(--secondary-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,8 +14,8 @@ export const Container = styled.div`
 `;
 
 export const Menu = styled.div`
-  height: 40.5rem;
-  width: 7rem;
+  height: 29.5rem;
+  width: 4.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,11 +23,13 @@ export const Menu = styled.div`
 `;
 
 export const Logo = styled.img`
-  margin-top: 3rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: 1.5rem;
 `;
 
 export const Options = styled.div`
-  height: 21.5rem;
+  height: 15rem;
   width: 7rem;
   display: flex;
   flex-direction: column;
@@ -32,4 +37,7 @@ export const Options = styled.div`
   justify-content: space-between;
 `;
 
-export const Option = styled.img``;
+export const Option = styled.img`
+  width: 4.5rem;
+  height: 4.5rem;
+`;

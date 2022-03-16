@@ -1,0 +1,20 @@
+:root {
+  --width-reference: 90rem;
+  --height-reference: 64rem;
+  --grid-sides: 7rem;
+  --grid-top: 5.5rem;
+  --primary-dark: #87986a;
+  --primary: #b5c99a;
+  --primary-light: #e9f5db;
+  --primary-light-linear: linear-gradient(
+    180deg,
+    #fcfcfc 0%,
+    var(--primary-light) 100%
+  );
+  --secondary-dark: #de80ff;
+  --secondary: #e8a5ff;
+  --secondary-light: #f5d8ff;
+  --body-text: #272727;
+  --secondary-body-text: #bcbcbc;
+  --grey-light: #efefef;
+}
