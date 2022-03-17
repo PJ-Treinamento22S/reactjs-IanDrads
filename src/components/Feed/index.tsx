@@ -9,15 +9,13 @@ import {
   Likes,
   Piu,
   Pius,
-  Portrait,
   Text,
-  User,
-  Username,
 } from "./styles";
 
 import Like from "../../assets/images/Heart.svg";
 import Favorite from "../../assets/images/Star.svg";
 import Delete from "../../assets/images/Trash.svg";
+import User from "../User";
 
 const Feed: React.FC = () => {
   return (
@@ -25,10 +23,7 @@ const Feed: React.FC = () => {
       <Divisor />
       <Pius>
         <Piu>
-          <User>
-            <Portrait />
-            <Username />
-          </User>
+          <User />
           <Card>
             <Text />
             <Interactions>

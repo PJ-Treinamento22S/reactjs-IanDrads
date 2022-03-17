@@ -26,25 +26,6 @@ export const Piu = styled.div`
   margin-bottom: 3rem;
 `;
 
-export const User = styled.div`
-  width: 34.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Portrait = styled.img`
-  width: 5.5rem;
-  height: 5.5rem;
-  object-fit: cover;
-  border-radius: 50%;
-  border: solid 0.2rem var(--primary-dark);
-`;
-
-export const Username = styled.h1`
-  width: 28rem;
-`;
-
 export const Card = styled.div`
   width: 33.25rem;
   height: 21rem;
