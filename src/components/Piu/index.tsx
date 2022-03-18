@@ -12,13 +12,16 @@ import {
 
 import Like from "../../assets/images/Heart.svg";
 import LikeChosen from "../../assets/images/Heart-chosen.svg";
-import Favorite from "../../assets/images/Star.svg";
+import Fav from "../../assets/images/Star.svg";
+import FavChosen from "../../assets/images/Star-chosen.svg";
 import Delete from "../../assets/images/Trash.svg";
 import * as Interfaces from "../../interfaces/interfaces";
+import api from "../../config/api";
 
-const Piu: React.FC<Interfaces.Piu> = ({ user, text, likes }) => {
+const Piu: React.FC<Interfaces.Piu> = ({ id, user, text, likes }) => {
   const [vlike, setVlike] = useState(false);
-  const handleClick = () => {
+  const [vfav, setVfav] = useState(false);
+  const handleClickLike = () => {
     if (vlike == false) {
       setVlike(true);
       likes.length++;
@@ -27,21 +30,32 @@ const Piu: React.FC<Interfaces.Piu> = ({ user, text, likes }) => {
       likes.length--;
     }
   };
+  const handleClickFavorite = () => {
+    if (vfav == false) {
+      setVfav(true);
+    } else {
+      setVfav(false);
+    }
+  };
+  const handleClickDelete = async () => {
+    await api.delete("/pius", { data: { piu_id: id } });
+  };
   const LikeSrc = vlike ? LikeChosen : Like;
+  const FavSrc = vfav ? FavChosen : Fav;
   return (
     <Container>
       <User username={user.username} photo={user.photo} />
       <Card>
         <Text>{text}</Text>
         <Interactions>
-          <Interaction onClick={handleClick}>
+          <Interaction onClick={handleClickLike}>
             <InteractionImg src={LikeSrc} />
             <Likes>{likes.length}</Likes>
           </Interaction>
-          <Interaction>
-            <InteractionImg src={Favorite} />
+          <Interaction onClick={handleClickFavorite}>
+            <InteractionImg src={FavSrc} />
           </Interaction>
-          <Interaction>
+          <Interaction onClick={handleClickDelete}>
             <InteractionImg src={Delete} />
           </Interaction>
         </Interactions>
