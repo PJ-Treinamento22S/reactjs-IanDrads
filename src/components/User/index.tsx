@@ -1,11 +1,16 @@
 import React from "react";
 import { Portrait, UserInfo, Username } from "./styles";
 
-const User: React.FC = () => {
+interface UserProps {
+  username: string;
+  photo: string;
+}
+
+const User: React.FC<UserProps> = ({ username, photo }) => {
   return (
     <UserInfo>
-      <Portrait />
-      <Username />
+      <Portrait src={photo} />
+      <Username>{username}</Username>
     </UserInfo>
   );
 };
