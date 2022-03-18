@@ -33,7 +33,7 @@ const Send: React.FC = () => {
         <PesquisarTxt />
       </Pesquisa>
       <Piar>
-        <User  username={'Ian_Drades'} photo={MyPhoto}/>
+        <User username={"Ian_Drades"} photo={MyPhoto} />
         <Card>
           <Text onChange={(e) => setText(e.target.value)} />
           <Subtext />
