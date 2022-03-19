@@ -28,6 +28,7 @@ const Send: React.FC = () => {
       await api.post("/pius", { text: text });
       setIsRed(false);
       setErro("");
+      window.location.reload();
     } else {
       setIsRed(true);
       setErro("Erro");

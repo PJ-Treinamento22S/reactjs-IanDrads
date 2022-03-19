@@ -38,7 +38,8 @@ const Piu: React.FC<Interfaces.Piu> = ({ id, user, text, likes }) => {
     }
   };
   const handleClickDelete = async () => {
-    await api.delete("/pius", { data: { piu_id: id } });
+    if (user.username === "xX_felipinho_Xx")
+      await api.delete("/pius", { data: { piu_id: id } });
   };
   const LikeSrc = vlike ? LikeChosen : Like;
   const FavSrc = vfav ? FavChosen : Fav;
