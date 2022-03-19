@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 import "../../assets/styles/global.css";
 
+interface SubtextProps {
+  isRed: boolean;
+}
+
 export const Container = styled.div`
   width: 21.75rem;
   height: 41.5rem;
@@ -35,21 +39,24 @@ export const Piar = styled.div``;
 
 export const Card = styled.div`
   width: 19rem;
-  height: 25rem;
+  height: 27rem;
   margin-left: 2.75rem;
   background: var(--secondary);
   border-radius: 3rem;
 `;
 
-export const Text = styled.textarea`
+export const Text = styled.textarea<SubtextProps>`
   width: 13.5rem;
   height: 18rem;
   margin-left: 2.75rem;
   margin-top: 2rem;
+  color: ${(props) => (props.isRed ? "red" : "var(--body-text)")};
 `;
 
-export const Subtext = styled.p`
+export const Subtext = styled.p<SubtextProps>`
+  margin-left: 3rem;
   display: flex;
+  color: ${(props) => (props.isRed ? "red" : "var(--body-text)")};
 `;
 
 export const Enviar = styled.button``;

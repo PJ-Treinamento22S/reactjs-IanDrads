@@ -21,8 +21,16 @@ import api from "../../config/api";
 
 const Send: React.FC = () => {
   const [text, setText] = useState("");
+  const [isRed, setIsRed] = useState(false);
+  const [erro, setErro] = useState("");
   const handleClick = async () => {
-    await api.post("/pius", { text: text });
+    if (text.length != 0 && text.length < 140) {
+      await api.post("/pius", { text: text });
+      setIsRed(false);
+    } else {
+      setIsRed(true);
+      setErro("Erro");
+    }
   };
   return (
     <Container>
@@ -35,8 +43,10 @@ const Send: React.FC = () => {
       <Piar>
         <User username={"Ian_Drades"} photo={MyPhoto} />
         <Card>
-          <Text onChange={(e) => setText(e.target.value)} />
-          <Subtext />
+          <Text isRed={isRed} onChange={(e) => setText(e.target.value)} />
+          <Subtext isRed={isRed}>
+            {text.length} / 140 {erro}
+          </Subtext>
           <Enviar onClick={handleClick}>
             <EnviarImg src={Arrow} />
           </Enviar>
