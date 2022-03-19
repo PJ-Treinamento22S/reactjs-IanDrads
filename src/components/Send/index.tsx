@@ -27,6 +27,7 @@ const Send: React.FC = () => {
     if (text.length != 0 && text.length < 140) {
       await api.post("/pius", { text: text });
       setIsRed(false);
+      setErro("");
     } else {
       setIsRed(true);
       setErro("Erro");
